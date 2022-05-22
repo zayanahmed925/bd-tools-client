@@ -1,44 +1,50 @@
 [
     {
         "id": 1,
-        "name": "ENGINE DIAGNOSTIC",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "name": "Central Nut Adjustable Wrenches",
+        "price": 300,
+        "quantity": 1000,
+        "description": "Ergonomically designed thermoplastic elastomer handle distributes pressure uniformly in the hand, reducing the risk for work related injuries.",
         "img": "https://i.ibb.co/xqV92pR/tools-1.png"
     },
     {
         "id": 2,
-        "name": "WHEEL ALIGNMENT",
-        "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "name": "Side Cutting Pliers",
+        "price": 100,
+        "quantity": 1000,
+        "description": "Distance from joint to centre of cutting edges is reduced for greater leverage and increased cutting capacity.",
         "img": " https://i.ibb.co/8rsGnfh/tools-2.png"
     },
     {
         "id": 3,
-        "name": "OIL CHANGING",
-        "price": "150",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "name": "Square Drive Cordless Brushless",
+        "price": 150,
+        "quantity": 1000,
+        "description": "High efficiency, more power, low maintenance, longer lifespan,  1/2 inch square drive with retaining ring.",
         "img": "https://i.ibb.co/yVzBv9Y/tools-3.png"
     },
     {
         "id": 4,
-        "name": "BRAKE REPARING",
-        "price": "180",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "name": "Electronic Torque and Angle Wrench",
+        "price": 180,
+        "quantity": 1000,
+        "description": "Torque range covers from 7 to 800 N·m and from 5.1 to 590 ft.lb.Programmable automatic shut-off time.",
         "img": "https://i.ibb.co/PmKMBXN/tools-4.png"
     },
     {
         "id": 5,
-        "name": "WASH AND GLASSING",
-        "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "name": "Long Flat Nose Pliers",
+        "price": 100,
+        "quantity": 1000,
+        "description": "Two-component ERGO™ handles: soft thermoplastic surface on tough polypropylene base provides superior grip.",
         "img": " https://i.ibb.co/1sK8SJR/tools-5.png"
     },
     {
         "id": 6,
-        "name": "COMPLETE ANALYSIS",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "name": "Superior Handsaws for Timber",
+        "price": 300,
+        "quantity": 1000,
+        "description": "Ergonomic and well balanced product, designed to fit perfectly in the hand with superior handling and comfort when sawing.",
         "img": " https://i.ibb.co/0n7r1zX/tools-6.png"
     }
 ]
