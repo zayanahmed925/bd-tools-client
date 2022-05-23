@@ -10,25 +10,47 @@ const Purchase = () => {
     const [user, loading, error] = useAuthState(auth);
     const [items, setItems] = useItems(itemsId);
     // console.log(itemsId)
-
+    const { _id, minimumQuantity, quantity, name, img, price } = items;
     const [disable, setDisable] = useState(false)
 
     const handleQuantity = (event) => {
-        const quantity = event.target.value;
-        if (quantity < items.minimumQuantity || quantity > items.quantity) {
+        const inputQuantity = event.target.value;
+        if (inputQuantity < minimumQuantity || inputQuantity > quantity) {
             toast.error('You have to purchase at least 20 products')
             setDisable(true)
         }
         else {
             setDisable(false)
         }
-
-        console.log('q', quantity);
     }
 
     const handleSubmit = (event) => {
+        event.preventDefault()
+        const purchase = {
+            purchaseId: _id,
+            userName: user.displayName,
+            userEmail: user.email,
+            img,
+            toolsName: name,
+            totalPrice: price * event.target.quantity.value,
+            quantity: event.target.quantity.value,
+            phone: event.target.phone.value
 
+        }
+        fetch('http://localhost:5000/purchase', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(purchase)
+        })
+            .then(res => res.json())
+            .then(data => {
 
+                if (data.success) {
+                    toast.success(`Your order Success for`)
+                }
+            })
     }
     return (
         <div className='flex justify-center items-center'>
@@ -39,16 +61,16 @@ const Purchase = () => {
                 <div>
                     <div class="card w-96 bg-base-100 shadow-xl">
                         <figure>
-                            <img className='w-36' src={items.img} alt="Shoes" />
+                            <img className='w-36' src={img} alt="Shoes" />
                         </figure>
                         <div class="card-body">
-                            <h2 className="card-title">{items.name}</h2>
+                            <h2 className="card-title">{name}</h2>
                             <p class="card-title">
-                                Price: {items.price}
+                                Price: {price}
                                 <div class="badge badge-secondary">Per Pics</div>
                             </p>
-                            <p>Available Quantity: {items.quantity} Pcs</p>
-                            <p>Minimum Order: {items.minimumQuantity} Pcs</p>
+                            <p>Available Quantity: {quantity} Pcs</p>
+                            <p>Minimum Order: {minimumQuantity} Pcs</p>
                             <p>{items.description}</p>
 
                         </div>

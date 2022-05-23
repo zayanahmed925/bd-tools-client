@@ -1,6 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
+import AddReview from './Page/Dashboard/AddReview';
+import Dashboard from './Page/Dashboard/Dashboard';
+import MyOrders from './Page/Dashboard/MyOrders';
 import Home from './Page/Home/Home';
 import Login from './Page/Login/Login';
 import Register from './Page/Login/Register';
@@ -19,6 +23,14 @@ function App() {
             <Purchase></Purchase>
           </RequireAuth>
         }></Route>
+        <Route path='/dashboard' element={
+          <RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>
+        }>
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path='addReview' element={<AddReview></AddReview>}></Route>
+        </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>

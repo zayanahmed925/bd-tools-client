@@ -22,7 +22,7 @@ const Login = () => {
     if (gError || error) {
         signInError = < p className='text-red-500 mb-2' > <small>{gError?.message || error?.message}</small></p >
     }
-    if (user) {
+    if (user || gUser) {
         navigate(from, { replace: true });
     }
 
