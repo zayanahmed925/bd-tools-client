@@ -1,14 +1,72 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 import useItems from '../Hooks/useItems';
 
 const Purchase = () => {
     const { itemsId } = useParams()
+    const [user, loading, error] = useAuthState(auth);
     const [items, setItems] = useItems(itemsId);
     // console.log(itemsId)
+
+    const [disable, setDisable] = useState(false)
+
+    const handleQuantity = (event) => {
+        const quantity = event.target.value;
+        if (quantity < items.minimumQuantity || quantity > items.quantity) {
+            toast.error('You have to purchase at least 20 products')
+            setDisable(true)
+        }
+        else {
+            setDisable(false)
+        }
+
+        console.log('q', quantity);
+    }
+
+    const handleSubmit = (event) => {
+
+
+    }
     return (
-        <div>
-            <p>{items.name}</p>
+        <div className='flex justify-center items-center'>
+
+            <br />
+
+            <div class="card lg:card-side bg-base-100 shadow-xl">
+                <div>
+                    <div class="card w-96 bg-base-100 shadow-xl">
+                        <figure>
+                            <img className='w-36' src={items.img} alt="Shoes" />
+                        </figure>
+                        <div class="card-body">
+                            <h2 className="card-title">{items.name}</h2>
+                            <p class="card-title">
+                                Price: {items.price}
+                                <div class="badge badge-secondary">Per Pics</div>
+                            </p>
+                            <p>Available Quantity: {items.quantity} Pcs</p>
+                            <p>Minimum Order: {items.minimumQuantity} Pcs</p>
+                            <p>{items.description}</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">New album is released!</h2>
+                    <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-5 justify-items-center mt-2'>
+                        <input type="text" name='name' disabled value={user?.displayName} className="input input-bordered w-full max-w-xs" />
+                        <input type="email" name='email' disabled value={user?.email} className="input input-bordered w-full max-w-xs" />
+                        <input onChange={handleQuantity} type="number" name="quantity" placeholder="Quantity" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name='phone' placeholder="Phone No:" className="input input-bordered w-full max-w-xs" />
+                        <input type="submit" value='submit' disabled={disable} className="btn btn-primary w-full max-w-xs" />
+                    </form>
+                </div>
+            </div>
+
+
         </div>
     );
 };

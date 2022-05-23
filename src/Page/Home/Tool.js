@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Tool = ({ tool }) => {
-    const { _id, name, price, img, quantity, description } = tool;
+    const { _id, name, price, img, quantity, description, minimumQuantity } = tool;
     return (
         <div className="card w-96 bg-base-100 shadow-xl border-2 border-orange-500">
             <figure className="px-4 pt-4">
@@ -11,7 +11,8 @@ const Tool = ({ tool }) => {
             <div className="card-body  ">
                 <h2 className="card-title">{name}</h2>
                 <p>Price: {price}</p>
-                <p>Available Quantity: {quantity}</p>
+                <p>Available Quantity: {quantity} Pcs</p>
+                <p>Minimum Order: {minimumQuantity} Pcs</p>
                 <p>{description}</p>
                 <div className="card-actions">
                     <Link to={`/tools/${_id}`}>
