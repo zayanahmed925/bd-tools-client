@@ -1,11 +1,11 @@
 import React from 'react';
-import { Oval } from 'react-loader-spinner';
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const Loading = () => {
     return (
         <div>
-            <Oval color="#00BFFF" height={80} width={80} />
+            <div className="flex items-center justify-center ">
+                <div className="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
+            </div>
         </div>
     );
 };

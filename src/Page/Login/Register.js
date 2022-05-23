@@ -114,7 +114,6 @@ const Register = () => {
                             </label>
                         </div>
 
-
                         {
                             signInError
                         }
@@ -125,7 +124,6 @@ const Register = () => {
                     <div className="divider">OR</div>
 
                     <button onClick={() => signInWithGoogle()} className="btn btn-outline btn-info">Signin With Google</button>
-
                 </div>
             </div>
         </div>
