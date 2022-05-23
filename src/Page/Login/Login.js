@@ -14,6 +14,7 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const navigate = useNavigate();
     const { register, formState: { errors }, handleSubmit } = useForm();
 
@@ -22,7 +23,7 @@ const Login = () => {
         signInError = < p className='text-red-500 mb-2' > <small>{gError?.message || error?.message}</small></p >
     }
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
 
 
