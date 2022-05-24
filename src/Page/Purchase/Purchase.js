@@ -15,8 +15,12 @@ const Purchase = () => {
 
     const handleQuantity = (event) => {
         const inputQuantity = event.target.value;
-        if (inputQuantity < minimumQuantity || inputQuantity > quantity) {
+        if (inputQuantity < minimumQuantity) {
             toast.error('You have to purchase at least 20 products')
+            setDisable(true)
+        }
+        else if (inputQuantity > quantity) {
+            toast.error('You have to purchase with in 1000 products')
             setDisable(true)
         }
         else {
@@ -34,7 +38,8 @@ const Purchase = () => {
             toolsName: name,
             totalPrice: price * event.target.quantity.value,
             quantity: event.target.quantity.value,
-            phone: event.target.phone.value
+            phone: event.target.phone.value,
+            address: event.target.address.value
 
         }
         fetch('http://localhost:5000/purchase', {
@@ -83,6 +88,7 @@ const Purchase = () => {
                         <input type="email" name='email' disabled value={user?.email} className="input input-bordered w-full max-w-xs" />
                         <input onChange={handleQuantity} type="number" name="quantity" placeholder="Quantity" className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='phone' placeholder="Phone No:" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" as='text-area' name='address' placeholder='Address' className="input input-bordered w-full max-w-xs" />
                         <input type="submit" value='submit' disabled={disable} className="btn btn-primary w-full max-w-xs" />
                     </form>
                 </div>

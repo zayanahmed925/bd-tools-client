@@ -6,6 +6,8 @@ import AddReview from './Page/Dashboard/AddReview';
 import AllUser from './Page/Dashboard/AllUser';
 import Dashboard from './Page/Dashboard/Dashboard';
 import MyOrders from './Page/Dashboard/MyOrders';
+import MyProfile from './Page/Dashboard/MyProfile';
+import AddTools from './Page/Dashboard/AddTools';
 import Home from './Page/Home/Home';
 import Login from './Page/Login/Login';
 import Register from './Page/Login/Register';
@@ -32,9 +34,15 @@ function App() {
         }>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='addReview' element={<AddReview></AddReview>}></Route>
+          <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
           <Route path='allUsers' element={
             <RequireAdmin>
               <AllUser></AllUser>
+            </RequireAdmin>
+          }></Route>
+          <Route path='addTools' element={
+            <RequireAdmin>
+              <AddTools></AddTools>
             </RequireAdmin>
           }></Route>
 
