@@ -8,7 +8,7 @@ const Dashboard = () => {
     const [user] = useAuthState(auth)
     const [admin] = useAdmin(user)
     return (
-        <div class="drawer drawer-mobile">
+        <div class="drawer drawer-mobile ">
             <input id="dashboard-slider" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content ">
                 <h2 className='text-2xl'>Welcome to my Dashboard</h2>
@@ -16,7 +16,7 @@ const Dashboard = () => {
 
 
             </div>
-            <div class="drawer-side">
+            <div class="drawer-side ">
                 <label for="dashboard-slider" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
