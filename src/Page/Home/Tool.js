@@ -10,7 +10,10 @@ const Tool = ({ tool }) => {
             </figure>
             <div className="card-body  ">
                 <h2 className="card-title">{name}</h2>
-                <p>Price: {price}</p>
+                <p class="card-title">
+                    Price: {price}
+                    <div class="badge badge-secondary">Per Pics</div>
+                </p>
                 <p>Available Quantity: {quantity} Pcs</p>
                 <p>Minimum Order: {minimumQuantity} Pcs</p>
                 <p>{description}</p>

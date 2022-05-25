@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 const MyOrders = () => {
     const [orders, setOrders] = useState([])
@@ -58,7 +58,19 @@ const MyOrders = () => {
                                 <td>{order.toolsName}</td>
                                 <td>{order.quantity}</td>
                                 <td>{order.totalPrice}</td>
-                                <td><button class="btn btn-sm">Tiny</button></td>
+                                <td>
+                                    {order.totalPrice && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
+
+                                    {/* {(order.totalPrice && order.totalPrice) && <span className='text-success'>Paid</span>} */}
+                                </td>
+
+
+
+
+
+
+
+
                                 <td><button class="btn btn-circle btn-error btn-outline">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" /></svg>
                                 </button></td>

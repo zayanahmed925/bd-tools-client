@@ -2,7 +2,7 @@ import React from 'react';
 import info from '../../assets/img/info.jpg';
 const BrandInfo = () => {
     return (
-        <div className='bg-gray-800'>
+        <div className='bg-gray-200'>
             <div className='w-3/4 mx-auto '>
                 <img className='pt-20' src={info} alt="" />
                 <h2 className='text-center text-white font-bold'>Leading brand of hand tools whose growth is based on innovation.</h2>

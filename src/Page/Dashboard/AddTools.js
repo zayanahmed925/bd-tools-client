@@ -9,13 +9,14 @@ const AddTools = () => {
         const quantity = event.target.quantity.value;
         const minimumQuantity = event.target.minimumQuantity.value;
         const img = event.target.img.value;
-        const text = event.target.description.value;
-        const data = { name, price, quantity, minimumQuantity, img, text };
+        const description = event.target.description.value;
+        const data = { name, price, quantity, minimumQuantity, img, description };
         const url = `http://localhost:5000/tools`
         fetch(url, {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(data)
         })

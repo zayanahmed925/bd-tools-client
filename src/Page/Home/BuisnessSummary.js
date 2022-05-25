@@ -25,10 +25,7 @@ const BuisnessSummary = () => {
                     return { mass: 1, tension: 230 * (index + 1), friction: 140 };
                 }}
             ></AnimatedNumbers>
-            <div>
-                <button onClick={() => setNum((state) => state + 31234)}>+</button>
-                <button onClick={() => setNum((state) => state - 31234)}>-</button>
-            </div>
+
         </div>
     );
 };

@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useToken from '../Hooks/useToken';
-
+import Loading from '../Shared/Loading/Loading';
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [
@@ -37,6 +37,10 @@ const Login = () => {
 
         signInWithEmailAndPassword(data.email, data.password)
     };
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div className='flex h-screen justify-center items-center'>
