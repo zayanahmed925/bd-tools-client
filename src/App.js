@@ -18,6 +18,7 @@ import Navbar from './Page/Shared/Navbar/Navbar';
 import ManageTools from './Page/Dashboard/ManageTools';
 import Payment from './Page/Dashboard/Payment';
 import UpdateProfile from './Page/Dashboard/UpdateProfile';
+import Portfolio from './Page/Portfolio/Portfolio';
 function App() {
   return (
     <div >
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='/tools/:itemsId' element={
           <RequireAuth>
             <Purchase></Purchase>

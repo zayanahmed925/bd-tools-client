@@ -11,7 +11,7 @@ const Dashboard = () => {
         <div class="drawer drawer-mobile ">
             <input id="dashboard-slider" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content ">
-                <h2 className='text-2xl'>Welcome to my Dashboard</h2>
+
                 <Outlet></Outlet>
 
 

@@ -6,9 +6,9 @@ const Banner = () => {
     //     height: "20px",
     //     backgroundImage: `url(${banner})`
     // };
-    <div className="w-full min-h-[70vh] bg-[url('https://cdn.shopify.com/s/files/1/0307/4529/7028/files/slider_banner2.png?v=1583325540')] bg-cover bg-center bg-no-repeat ">
-        <h2>Hello</h2>
-    </div>
+    // <div className="w-full min-h-[70vh] bg-[url('https://cdn.shopify.com/s/files/1/0307/4529/7028/files/slider_banner2.png?v=1583325540')] bg-cover bg-center bg-no-repeat ">
+    //     <h2>Hello</h2>
+    // </div>
     return (
         <div>
             <div className="carousel w-full ">
