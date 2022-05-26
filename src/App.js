@@ -19,6 +19,7 @@ import ManageTools from './Page/Dashboard/ManageTools';
 import Payment from './Page/Dashboard/Payment';
 import UpdateProfile from './Page/Dashboard/UpdateProfile';
 import Portfolio from './Page/Portfolio/Portfolio';
+import NotFound from './Page/NotFound/NotFound';
 function App() {
   return (
     <div >
@@ -61,6 +62,7 @@ function App() {
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
     </div>

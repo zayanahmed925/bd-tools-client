@@ -110,13 +110,12 @@ const Portfolio = () => {
                         </div>
                         <div class="content w-full p-12">
                             <div id="profile" class="prose">
-                                <h2 class="section-headline">Profile</h2>
+                                <h2 class="section-headline font-bold">Profile</h2>
                                 <p>
                                     I'm a self-taught web developer focusing on the core web
-                                    fundamentals - HTML, CSS and JS. I'm experienced in frontend
-                                    frameworks like Vue and React and static site generators like
-                                    Next.js and Eleventy. I write SCSS or use CSS frameworks like
-                                    TailwindCSS, Bootstrap or Bulma to speed up styling of my
+                                    fundamentals - HTML, CSS and JS. I'm learning in frontend
+                                    frameworks like  React . I use CSS frameworks like
+                                    TailwindCSS, Bootstrap to speed up styling of my
                                     projects.
                                 </p>
                                 <p>
