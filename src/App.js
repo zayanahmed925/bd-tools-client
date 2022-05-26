@@ -17,6 +17,7 @@ import Purchase from './Page/Purchase/Purchase';
 import Navbar from './Page/Shared/Navbar/Navbar';
 import ManageTools from './Page/Dashboard/ManageTools';
 import Payment from './Page/Dashboard/Payment';
+import UpdateProfile from './Page/Dashboard/UpdateProfile';
 function App() {
   return (
     <div >
@@ -38,6 +39,7 @@ function App() {
           <Route path='addReview' element={<AddReview></AddReview>}></Route>
           <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
           <Route path='payment/:id' element={<Payment></Payment>}></Route>
+          <Route path='updateProfile' element={<UpdateProfile></UpdateProfile>}></Route>
           <Route path='allUsers' element={
             <RequireAdmin>
               <AllUser></AllUser>
