@@ -34,41 +34,47 @@ const MyOrders = () => {
 
     return (
         <div>
-            <h2>Order {orders.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
-
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Image</th>
-                            <th>Tools Name</th>
-                            <th>Quantity</th>
-                            <th>Total Price</th>
-                            <th>Pay</th>
-                            <th>Delete</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            orders.map((order, index) => <OrderRow
-                                order={order}
-                                index={index}
-                                setDeleteOrder={setDeleteOrder}
-                                refetch={refetch}
-                            ></OrderRow>)
-                        }
-                    </tbody>
-                </table>
-            </div>
             {
-                deleteOrder && <OrderModal
-                    deleteOrder={deleteOrder}
-                    refetch={refetch}
-                    setDeleteOrder={setDeleteOrder}
-                ></OrderModal>
+                orders.length < 1 ? <h2 className='text-2xl font-bold text-orange-600 '>You have no Order !!</h2> : <>
+
+                    <div class="overflow-x-auto">
+                        <table class="table w-full">
+
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Image</th>
+                                    <th>Tools Name</th>
+                                    <th>Quantity</th>
+                                    <th>Total Price</th>
+                                    <th>Pay</th>
+                                    <th>Delete</th>
+                                    <th>transactionId </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    orders.map((order, index) => <OrderRow
+                                        order={order}
+                                        index={index}
+                                        setDeleteOrder={setDeleteOrder}
+                                        refetch={refetch}
+                                    ></OrderRow>)
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    {
+                        deleteOrder && <OrderModal
+                            deleteOrder={deleteOrder}
+                            refetch={refetch}
+                            setDeleteOrder={setDeleteOrder}
+                        ></OrderModal>
+                    }
+                </>
             }
+
         </div>
     );
 };

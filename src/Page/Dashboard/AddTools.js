@@ -23,19 +23,20 @@ const AddTools = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                event.target.reset();
             })
 
     }
     return (
-        <div>
+        <div >
+            <h2 className='text-center text-gray-900 text-3xl font-bold mb-8 font-sans'>Add Available<span className='text-primary'> Tools </span> !!</h2>
             <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-5 justify-items-center mt-2'>
-                <input type="text" name='name' placeholder='Tools Name' className="input input-bordered w-full max-w-xs" />
-                <input type="number" name="price" placeholder="Price" className="input input-bordered w-full max-w-xs" />
-                <input type="number" name="quantity" placeholder="Available Quantity" className="input input-bordered w-full max-w-xs" />
-                <input type="number" name="minimumQuantity" placeholder="Minimum Quantity" className="input input-bordered w-full max-w-xs" />
-                <input type="text" name="img" placeholder="Enter Image URL" className="input input-bordered w-full max-w-xs" />
-                <textarea class="textarea textarea-bordered w-80" name='description' placeholder="Description"></textarea>
-                {/* <input type="text" name='description' placeholder='Description' className="input input-bordered w-full max-w-xs" /> */}
+                <input type="text" name='name' placeholder='Tools Name' className="input input-bordered w-full max-w-xs" required />
+                <input type="number" name="price" placeholder="Price" className="input input-bordered w-full max-w-xs" required />
+                <input type="number" name="quantity" placeholder="Available Quantity" className="input input-bordered w-full max-w-xs" required />
+                <input type="number" name="minimumQuantity" placeholder="Minimum Quantity" className="input input-bordered w-full max-w-xs" required />
+                <input type="text" name="img" placeholder="Enter Image URL" className="input input-bordered w-full max-w-xs" required />
+                <textarea class="textarea textarea-bordered w-80" name='description' placeholder="Description" required></textarea>
                 <input type="submit" value='submit' className="btn btn-primary w-full max-w-xs" />
             </form>
         </div>

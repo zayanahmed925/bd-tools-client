@@ -16,12 +16,11 @@ const Tool = ({ tool }) => {
                 </p>
                 <p>Available Quantity: {quantity} Pcs</p>
                 <p>Minimum Order: {minimumQuantity} Pcs</p>
-                <p>{description}</p>
-                <div className="card-actions">
-                    <Link to={`/tools/${_id}`}>
-                        <button className=' btn w-full max-w-xs'>Update</button></Link>
-                </div>
+                <p><small>{description}</small></p>
+
             </div>
+            <Link to={`/tools/${_id}`}>
+                <button className=' btn btn-primary w-full max-w-xl flex items-center'>Purchase</button></Link>
         </div>
     );
 };

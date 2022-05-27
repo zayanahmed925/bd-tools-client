@@ -15,8 +15,8 @@ const Reviews = () => {
         return <Loading></Loading>
     }
     return (
-        <div >
-            <p>{reviews.length}</p>
+        <div className='container mx-auto'>
+
             <div className='grid lg:grid-cols-2 gap-5  '>
                 {
                     reviews?.map(review => <Review

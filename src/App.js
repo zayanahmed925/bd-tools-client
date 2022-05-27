@@ -20,6 +20,7 @@ import Payment from './Page/Dashboard/Payment';
 import UpdateProfile from './Page/Dashboard/UpdateProfile';
 import Portfolio from './Page/Portfolio/Portfolio';
 import NotFound from './Page/NotFound/NotFound';
+import Blogs from './Page/Blogs/Blogs';
 function App() {
   return (
     <div >
@@ -28,6 +29,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/tools/:itemsId' element={
           <RequireAuth>
             <Purchase></Purchase>

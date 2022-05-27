@@ -30,6 +30,7 @@ const Purchase = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+
         const purchase = {
             purchaseId: _id,
             userName: user.displayName,
@@ -40,7 +41,6 @@ const Purchase = () => {
             quantity: event.target.quantity.value,
             phone: event.target.phone.value,
             address: event.target.address.value
-
         }
         fetch('http://localhost:5000/purchase', {
             method: 'POST',
@@ -53,7 +53,8 @@ const Purchase = () => {
             .then(data => {
 
                 if (data.success) {
-                    toast.success(`Your order Success for`)
+                    toast.success(`Your order Success for ${name}`)
+
                 }
             })
     }
@@ -64,7 +65,7 @@ const Purchase = () => {
 
             <div class="card lg:card-side bg-base-100 shadow-xl">
                 <div>
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div class="card w-96 bg-white ">
                         <figure>
                             <img className='w-36' src={img} alt="Shoes" />
                         </figure>
@@ -82,13 +83,13 @@ const Purchase = () => {
                     </div>
                 </div>
                 <div class="card-body">
-                    <h2 class="card-title">New album is released!</h2>
+                    <h2 class="card-title">Purchase Your <span className='text-primary'>Product</span>!</h2>
                     <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-5 justify-items-center mt-2'>
                         <input type="text" name='name' disabled value={user?.displayName} className="input input-bordered w-full max-w-xs" />
                         <input type="email" name='email' disabled value={user?.email} className="input input-bordered w-full max-w-xs" />
-                        <input onChange={handleQuantity} type="number" name="quantity" placeholder="Quantity" className="input input-bordered w-full max-w-xs" />
-                        <input type="text" name='phone' placeholder="Phone No:" className="input input-bordered w-full max-w-xs" />
-                        <input type="text" as='text-area' name='address' placeholder='Address' className="input input-bordered w-full max-w-xs" />
+                        <input onChange={handleQuantity} type="number" name="quantity" placeholder="Quantity" className="input input-bordered w-full max-w-xs" required />
+                        <input type="text" name='phone' placeholder="Phone No:" className="input input-bordered w-full max-w-xs" required />
+                        <input type="text" as='text-area' name='address' placeholder='Address' className="input input-bordered w-full max-w-xs" required />
                         <input type="submit" value='submit' disabled={disable} className="btn btn-primary w-full max-w-xs" />
                     </form>
                 </div>
