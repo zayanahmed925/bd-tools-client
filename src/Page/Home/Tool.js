@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Tool = ({ tool }) => {
     const { _id, name, price, img, quantity, description, minimumQuantity } = tool;
     return (
-        <div className="card w-96 bg-base-100 shadow-xl border-2 border-orange-500">
+        <div className="card  bg-base-100 shadow-xl border-2 border-orange-500">
             <figure className="px-4 pt-4">
                 <img src={img} alt="Shoes" className="rounded-xl" />
             </figure>

@@ -4,11 +4,11 @@ import Footer from '../Shared/Footer/Footer';
 
 
 import Banner from './Banner';
-import BrandInfo from './BrandInfo';
 import BuisnessSummary from './BuisnessSummary';
 import PopularProduct from './PopularProduct';
 import Reviews from './Reviews';
 import Tools from './Tools';
+import UpcomingProduct from './UpcomingProduct';
 
 const Home = () => {
     return (
@@ -17,9 +17,9 @@ const Home = () => {
 
             <Tools></Tools>
             <PopularProduct></PopularProduct>
+            <UpcomingProduct></UpcomingProduct>
             <BuisnessSummary></BuisnessSummary>
             <Reviews></Reviews>
-            <BrandInfo></BrandInfo>
             <Footer></Footer>
         </div>
     );
