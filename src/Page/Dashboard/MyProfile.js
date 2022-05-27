@@ -1,15 +1,19 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 
 const MyProfile = () => {
     const [user, loading, error] = useAuthState(auth);
+    const navigate = useNavigate();
 
     const { data: profile, isLoading, } = useQuery('profile', () => fetch(`http://localhost:5000/profile/${user.email}`, {
         method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        }
 
     }).then(res => res.json()))
     if (isLoading) {
@@ -20,7 +24,7 @@ const MyProfile = () => {
         <div class="max-w-sm content-center flex flex-col justify-center mx-auto bg-white mt-[10vh] rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 py-8">
 
             {
-                profile.map(p => <div class="flex flex-col   pl-10  pb-10">
+                profile?.map(p => <div class="flex flex-col   pl-10  pb-10">
                     <h1 class="text-3xl text-gray-900 font-semibold">{p.user}</h1>
                     <div class="mb-2 mt-2">
                         <h1 class="text-base text-gray-300 font-semibold">Education</h1>
@@ -49,7 +53,8 @@ const MyProfile = () => {
                     </div>
                 </div>)
             }
-            <Link to={`/dashboard/updateProfile`}><button className='btn  btn-primary w-3/4 flex items-center'>Update</button></Link>
+            <button onClick={() => navigate('/dashboard/updateProfile')} className='bg-primary py-3 '>Update</button>
+            {/* <Link to={`/dashboard/updateProfile`}><button className='btn  btn-primary w-3/4 flex items-center'>Update</button></Link> */}
         </div>
     );
 };

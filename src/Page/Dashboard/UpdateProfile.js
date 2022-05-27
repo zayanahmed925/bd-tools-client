@@ -38,8 +38,8 @@ const UpdateProfile = () => {
                     <input type="email" name='email' disabled value={user?.email} className="input input-bordered w-full max-w-xs" />
                     <input type="text" name='education' placeholder='Education' className="input input-bordered w-full max-w-xs" />
                     <input type="text" name='location' placeholder='Present Address' className="input input-bordered w-full max-w-xs" />
-                    <input type="text" name='profile' placeholder='Profile Link' className="input input-bordered w-full max-w-xs w-80" />
-                    <input type="number" name='phone' placeholder='Phone Number' className="input input-bordered w-full max-w-xs w-80" />
+                    <input type="text" name='profile' placeholder='Profile Link' className="input input-bordered  max-w-xs w-80" />
+                    <input type="number" name='phone' placeholder='Phone Number' className="input input-bordered  max-w-xs w-80" />
 
                     <input type="submit" value='Submit' className="btn btn-primary w-full max-w-xs" />
                 </form>

@@ -24,7 +24,7 @@ const Navbar = () => {
     </>
     return (
         <div>
-            <div className="navbar bg-primary ">
+            <div className="navbar  ">
                 <div className="navbar-start ">
 
 
@@ -39,7 +39,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <h2 className="btn btn-ghost normal-case text-xl">BD TOOLS</h2>
+                    <h2 className="font-bold lg:pl-8 normal-case text-xl">BD TOOLS</h2>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
