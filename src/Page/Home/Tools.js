@@ -3,9 +3,8 @@ import Tool from './Tool';
 
 const Tools = () => {
     const [tools, setTools] = useState([])
-    console.log(tools)
     useEffect(() => {
-        fetch('http://localhost:5000/tools', {
+        fetch('https://mysterious-reef-14055.herokuapp.com/tools', {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },

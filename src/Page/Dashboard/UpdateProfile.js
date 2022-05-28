@@ -24,7 +24,7 @@ const UpdateProfile = () => {
             profile: event.target.profile.value,
             phone: event.target.phone.value
         }
-        fetch(`http://localhost:5000/profile/${user.email}`, {
+        fetch(`https://mysterious-reef-14055.herokuapp.com/profile/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

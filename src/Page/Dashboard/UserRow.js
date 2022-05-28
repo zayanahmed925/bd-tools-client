@@ -5,7 +5,7 @@ const UserRow = ({ user, refetch, index }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://mysterious-reef-14055.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -31,7 +31,7 @@ const UserRow = ({ user, refetch, index }) => {
         <tr>
             <th>{index + 1}</th>
             <td>{email}</td>
-            <td>{role !== 'admin' ? <button onClick={makeAdmin} class="btn btn-sm btn-primary">Make Admin</button> : <h4 className='font-bold text-green-500'>Already Admin</h4>}</td>
+            <td>{role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-sm btn-primary">Make Admin</button> : <h4 className='font-bold text-green-500'>Already Admin</h4>}</td>
 
         </tr>
     );

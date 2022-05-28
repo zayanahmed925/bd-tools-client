@@ -42,7 +42,7 @@ const Purchase = () => {
             phone: event.target.phone.value,
             address: event.target.address.value
         }
-        fetch('http://localhost:5000/purchase', {
+        fetch('https://mysterious-reef-14055.herokuapp.com/purchase', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -63,17 +63,17 @@ const Purchase = () => {
 
             <br />
 
-            <div class="card lg:card-side bg-base-100 shadow-xl">
+            <div className="card lg:card-side bg-base-100 shadow-xl">
                 <div>
-                    <div class="card w-96 bg-white ">
+                    <div className="card w-96 bg-white ">
                         <figure>
                             <img className='w-36' src={img} alt="Shoes" />
                         </figure>
-                        <div class="card-body">
+                        <div className="card-body">
                             <h2 className="card-title">{name}</h2>
-                            <p class="card-title">
+                            <p className="card-title">
                                 Price: {price}
-                                <div class="badge badge-secondary">Per Pics</div>
+                                <div className="badge badge-secondary">Per Pics</div>
                             </p>
                             <p>Available Quantity: {quantity} Pcs</p>
                             <p>Minimum Order: {minimumQuantity} Pcs</p>
@@ -82,8 +82,8 @@ const Purchase = () => {
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <h2 class="card-title">Purchase Your <span className='text-primary'>Product</span>!</h2>
+                <div className="card-body">
+                    <h2 className="card-title">Purchase Your <span className='text-primary'>Product</span>!</h2>
                     <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-5 justify-items-center mt-2'>
                         <input type="text" name='name' disabled value={user?.displayName} className="input input-bordered w-full max-w-xs" />
                         <input type="email" name='email' disabled value={user?.email} className="input input-bordered w-full max-w-xs" />

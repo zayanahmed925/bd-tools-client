@@ -6,7 +6,7 @@ import ToolsRow from './ToolsRow';
 
 const ManageTools = () => {
     const [deleteTools, setDeleteTools] = useState(null);
-    const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('http://localhost:5000/tools', {
+    const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('https://mysterious-reef-14055.herokuapp.com/tools', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
@@ -18,8 +18,8 @@ const ManageTools = () => {
     return (
         <div>
             <h2>Manage Tools{tools.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>

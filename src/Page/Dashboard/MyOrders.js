@@ -13,7 +13,7 @@ const MyOrders = () => {
     const [user] = useAuthState(auth)
     const navigate = useNavigate();
 
-    const { data: orders, isLoading, refetch } = useQuery('tools', () => fetch(`http://localhost:5000/purchase?userEmail=${user.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('tools', () => fetch(`https://mysterious-reef-14055.herokuapp.com/purchase?userEmail=${user.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -37,8 +37,8 @@ const MyOrders = () => {
             {
                 orders.length < 1 ? <h2 className='text-2xl font-bold text-orange-600 '>You have no Order !!</h2> : <>
 
-                    <div class="overflow-x-auto">
-                        <table class="table w-full">
+                    <div className="overflow-x-auto">
+                        <table className="table w-full">
 
                             <thead>
                                 <tr>

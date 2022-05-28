@@ -8,17 +8,17 @@ const Dashboard = () => {
     const [user] = useAuthState(auth)
     const [admin] = useAdmin(user)
     return (
-        <div class="drawer drawer-mobile ">
-            <input id="dashboard-slider" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content ">
+        <div className="drawer drawer-mobile ">
+            <input id="dashboard-slider" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content ">
 
                 <Outlet></Outlet>
 
 
             </div>
-            <div class="drawer-side ">
-                <label for="dashboard-slider" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 bg-white lg:bg-transparent text-base-content">
+            <div className="drawer-side ">
+                <label for="dashboard-slider" className="drawer-overlay"></label>
+                <ul className="menu p-4 overflow-y-auto w-80 bg-white lg:bg-transparent text-base-content">
                     {/* <!-- Sidebar content here --> */}
                     {
                         !admin && <>

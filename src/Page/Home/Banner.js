@@ -50,9 +50,9 @@ const Banner = () => {
                             >
                                 Get started
                             </a>
-                            <button class="flex items-center mt-4 text-orange-500 text-sm uppercase font-medium rounded hover:underline focus:outline-none">
+                            <button className="flex items-center mt-4 text-orange-500 text-sm uppercase font-medium rounded hover:underline focus:outline-none">
                                 <span>More Details</span>
-                                <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                <svg className="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                             </button>
                         </div>
                     </div>
