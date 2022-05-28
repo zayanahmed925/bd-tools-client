@@ -16,6 +16,7 @@ import RequireAuth from './Page/Login/RequireAuth';
 import Purchase from './Page/Purchase/Purchase';
 import Navbar from './Page/Shared/Navbar/Navbar';
 import ManageTools from './Page/Dashboard/ManageTools';
+import ManageAllOrder from './Page/Dashboard/ManageAllOrder';
 import Payment from './Page/Dashboard/Payment';
 import UpdateProfile from './Page/Dashboard/UpdateProfile';
 import Portfolio from './Page/Portfolio/Portfolio';
@@ -58,6 +59,11 @@ function App() {
           <Route path='manageTools' element={
             <RequireAdmin>
               <ManageTools></ManageTools>
+            </RequireAdmin>
+          }></Route>
+          <Route path='manageAllOrder' element={
+            <RequireAdmin>
+              <ManageAllOrder></ManageAllOrder>
             </RequireAdmin>
           }></Route>
 

@@ -11,7 +11,7 @@ const ManageTools = () => {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()))
-    console.log(tools)
+    // console.log(tools)
     if (isLoading) {
         return <Loading></Loading>
     }
