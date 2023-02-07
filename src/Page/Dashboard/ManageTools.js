@@ -6,7 +6,7 @@ import ToolsRow from './ToolsRow';
 
 const ManageTools = () => {
     const [deleteTools, setDeleteTools] = useState(null);
-    const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('https://mysterious-reef-14055.herokuapp.com/tools', {
+    const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('https://bd-tools-server.onrender.com/tools', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

@@ -24,7 +24,7 @@ const UpdateProfile = () => {
             profile: event.target.profile.value,
             phone: event.target.phone.value
         }
-        fetch(`https://mysterious-reef-14055.herokuapp.com/profile/${user.email}`, {
+        fetch(`https://bd-tools-server.onrender.com/profile/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

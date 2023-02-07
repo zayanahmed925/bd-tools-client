@@ -7,7 +7,7 @@ import Loading from '../Shared/Loading/Loading';
 
 const MyProfile = () => {
     const [user, loading, error] = useAuthState(auth);
-    const { data: profile, isLoading, } = useQuery('profile', () => fetch(`https://mysterious-reef-14055.herokuapp.com/profile/${user.email}`, {
+    const { data: profile, isLoading, } = useQuery('profile', () => fetch(`https://bd-tools-server.onrender.com/profile/${user.email}`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json'

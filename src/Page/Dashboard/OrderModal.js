@@ -5,7 +5,7 @@ const OrderModal = ({ deleteOrder, refetch, setDeleteOrder }) => {
     const { toolsName, _id } = deleteOrder;
 
     const handleDelete = id => {
-        fetch(`https://mysterious-reef-14055.herokuapp.com/purchase/${id}`, {
+        fetch(`https://bd-tools-server.onrender.com/purchase/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

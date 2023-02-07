@@ -20,7 +20,7 @@ const AddReview = () => {
             comments: event.target.comments.value,
             reviewStar: event.target.review.value,
         }
-        fetch('https://mysterious-reef-14055.herokuapp.com/review', {
+        fetch('https://bd-tools-server.onrender.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -42,7 +42,7 @@ const Purchase = () => {
             phone: event.target.phone.value,
             address: event.target.address.value
         }
-        fetch('https://mysterious-reef-14055.herokuapp.com/purchase', {
+        fetch('https://bd-tools-server.onrender.com/purchase', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

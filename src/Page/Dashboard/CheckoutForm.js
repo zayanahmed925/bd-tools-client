@@ -13,7 +13,7 @@ const CheckoutForm = ({ item }) => {
     const { _id, totalPrice, userName, userEmail } = item;
     console.log(userName, userEmail)
     useEffect(() => {
-        fetch('https://mysterious-reef-14055.herokuapp.com/create-payment-intent', {
+        fetch('https://bd-tools-server.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({ item }) => {
                 transactionId: paymentIntent.id
             }
 
-            fetch(`https://mysterious-reef-14055.herokuapp.com/purchase/${_id}`, {
+            fetch(`https://bd-tools-server.onrender.com/purchase/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

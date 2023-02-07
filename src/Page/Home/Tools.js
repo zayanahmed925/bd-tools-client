@@ -4,7 +4,7 @@ import Tool from './Tool';
 const Tools = () => {
     const [tools, setTools] = useState([])
     useEffect(() => {
-        fetch('https://mysterious-reef-14055.herokuapp.com/tools', {
+        fetch('https://bd-tools-server.onrender.com/tools', {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },

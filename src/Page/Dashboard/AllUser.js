@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading/Loading';
 import UserRow from './UserRow';
 
 const AllUser = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://mysterious-reef-14055.herokuapp.com/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://bd-tools-server.onrender.com/users', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

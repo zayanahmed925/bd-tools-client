@@ -6,7 +6,7 @@ const DeleteModal = ({ deleteTools, refetch, setDeleteTools }) => {
 
     const handleDelete = id => {
         // console.log('delete')
-        fetch(`https://mysterious-reef-14055.herokuapp.com/tools/${id}`, {
+        fetch(`https://bd-tools-server.onrender.com/tools/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

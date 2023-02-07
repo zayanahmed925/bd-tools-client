@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading/Loading';
 import Review from './Review';
 
 const Reviews = () => {
-    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('https://mysterious-reef-14055.herokuapp.com/review', {
+    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('https://bd-tools-server.onrender.com/review', {
         method: 'GET',
     }).then(res => res.json()))
 

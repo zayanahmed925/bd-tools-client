@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading/Loading';
 import ManageOrderRow from './ManageOrderRow';
 
 const ManageAllOrder = () => {
-    const { data: allPurchase, isLoading, refetch } = useQuery('allPurchase', () => fetch('https://mysterious-reef-14055.herokuapp.com/allPurchase', {
+    const { data: allPurchase, isLoading, refetch } = useQuery('allPurchase', () => fetch('https://bd-tools-server.onrender.com/allPurchase', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

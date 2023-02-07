@@ -6,7 +6,7 @@ const useToken = user => {
         const email = user?.user?.email;
         const currentUser = { email: email }
         if (user) {
-            fetch(`https://mysterious-reef-14055.herokuapp.com/user/${email}`, {
+            fetch(`https://bd-tools-server.onrender.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

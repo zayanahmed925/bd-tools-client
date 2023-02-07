@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const ManagepurchaseRow = ({ purchase, index, refetch }) => {
     const { paid, _id, status } = purchase;
     const handleStatus = id => {
-        const url = `https://mysterious-reef-14055.herokuapp.com/allPurchase/${id}`;
+        const url = `https://bd-tools-server.onrender.com/allPurchase/${id}`;
 
         fetch(url, {
             method: 'PUT',
@@ -23,7 +23,7 @@ const ManagepurchaseRow = ({ purchase, index, refetch }) => {
             })
     }
     const handleDelete = (id) => {
-        const url = `https://mysterious-reef-14055.herokuapp.com/allPurchase/${id}`;
+        const url = `https://bd-tools-server.onrender.com/allPurchase/${id}`;
         fetch(url, {
             method: "DELETE",
             headers: {

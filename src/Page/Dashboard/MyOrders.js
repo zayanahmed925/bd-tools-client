@@ -13,7 +13,7 @@ const MyOrders = () => {
     const [user] = useAuthState(auth)
     const navigate = useNavigate();
 
-    const { data: orders, isLoading, refetch } = useQuery('tools', () => fetch(`https://mysterious-reef-14055.herokuapp.com/purchase?userEmail=${user.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('tools', () => fetch(`https://bd-tools-server.onrender.com/purchase?userEmail=${user.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
